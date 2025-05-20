@@ -22,3 +22,21 @@ config imm_init
 	option anon_mount '1'
 	option system_chn '1'
 
+config led
+	option name 'wifi'
+	option sysfs 'red:status'
+	option trigger 'netdev'
+	option dev 'wlan0'
+	list mode 'link'
+	list mode 'tx'
+	list mode 'rx'
+
+config led
+	option name 'wan'
+	option sysfs 'amber:status'
+	option trigger 'netdev'
+	option dev 'eth0.2'
+	list mode 'link'
+	list mode 'tx'
+	list mode 'rx'
+
